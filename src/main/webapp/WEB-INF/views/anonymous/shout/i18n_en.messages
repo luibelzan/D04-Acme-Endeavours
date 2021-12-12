@@ -3,11 +3,22 @@ anonymous.shout.form.label.text = Text:
 anonymous.shout.form.label.info = Link:
 anonymous.shout.form.button.create = Shout!
 anonymous.shout.form.button.return = Return
+anonymous.shout.form.label.atributo1 = Attribute1:
+anonymous.shout.form.label.atributo2 = Attribute2:
+anonymous.shout.form.label.atributo3 = Attribute3:
+anonymous.shout.form.label.atributo4 = Attribute4:
  
 anonymous.shout.list.label.moment = Moment
 anonymous.shout.list.label.author = Author
 anonymous.shout.list.label.text = Text
 anonymous.shout.list.label.info = Link
+anonymous.shout.list.label.atributo1 = Attribute1
+anonymous.shout.list.label.atributo2 = Attribute2
+anonymous.shout.list.label.atributo3 = Attribute3
+anonymous.shout.list.label.atributo4 = Attribute4
 
 anonymous.message.form.error.spam.author = Contains spam words
 anonymous.message.form.error.spam = Contains spam words
+anonymous.message.form.error.atributo2 = Date must be at least one week ahead when the shout is created
+anonymous.message.form.error.atributo22 = May not be null
+anonymous.message.form.error.spam.atributo1 = yy, mm, and dd refer to the year, the month, and the day when the shout is created

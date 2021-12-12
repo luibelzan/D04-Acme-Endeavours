@@ -47,6 +47,14 @@ public class Dashboard implements Serializable {
 	Double						deviationWorkloadDuties;
 	Double						minimumWorkloadDuties;
 	Double						maximumWorkloadDuties;
+	
+	
+	Double 						ratioEntidad1Important;
+	Double						ratioOfShoutsBudget0;
+	Double						averageCurrency1;
+	Double 						averageCurrency2;
+	Double 						deviationCurrency1;
+	Double						deviationCurrency2;
 
 	// Derived attributes -----------------------------------------------------
 

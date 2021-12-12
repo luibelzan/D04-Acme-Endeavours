@@ -13,11 +13,13 @@
 package acme.features.administrator.dashboard;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.duties.Duty;
+import acme.entities.shouts.Shout;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -63,5 +65,21 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	@Query("select max(d.workloadInHours) from Duty d")
 	Double maximumWorkloadDuties();
+	
+	//Shouts
+	@Query("select s from Shout s")
+	Collection<Shout> findShouts();
+			
+	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.entidad1.atributo4 = true")
+	Double ratioEntidad1Important();
+						
+	@Query("select 1.0 * count(a) / (select count(b) from Shout b) from Shout a where a.entidad1.atributo3.amount = 0.0")
+	Double ratioOfShoutsBudget0();
+			
+	@Query("select avg(e.atributo3.amount) from Entidad1 e group by e.atributo3.currency")
+	List<Double> averageEntidad1GroupByCurrency();
+						
+	@Query("select stddev(e.atributo3.amount) from Entidad1 e group by e.atributo3.currency")
+	List<Double> deviationEntidad1GroupByCurrency();
 
 }

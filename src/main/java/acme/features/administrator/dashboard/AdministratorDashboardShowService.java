@@ -12,6 +12,7 @@
 
 package acme.features.administrator.dashboard;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -56,7 +57,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			"avegageNumberOfApplicationsPerEmployer", "ratioOfPendingApplications", 
 			"ratioOfRejectedApplications", "ratioOfAcceptedApplications", "numberPublicDuty", "numberPrivateDuty", "numberFinalDuty", 
 			"numberNoFinalDuty","averageDurationPeriodDuties","deviationDurationPeriodDuties","minimumDurationPeriodDuties","maximumDurationPeriodDuties",
-			"averageWorkloadDuties","deviationWorkloadDuties","minimumWorkloadDuties","maximumWorkloadDuties");
+			"averageWorkloadDuties","deviationWorkloadDuties","minimumWorkloadDuties","maximumWorkloadDuties", "ratioEntidad1Important", "ratioOfShoutsBudget0", 
+			"averageCurrency1", "averageCurrency2", "deviationCurrency1", "deviationCurrency2");
 	}
 
 	@Override
@@ -86,6 +88,42 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double deviationWorkloadDuties;
 		final Double minimumWorkloadDuties;
 		final Double maximumWorkloadDuties;
+		
+		Double ratioEntidad1Important; 
+		final Double ratioOfShoutsBudget0;
+		Double averageCurrency1;
+		Double averageCurrency2;
+		Double deviationCurrency1;
+		final Double deviationCurrency2;
+		
+		ratioEntidad1Important = this.repository.ratioEntidad1Important();
+		ratioOfShoutsBudget0 = this.repository.ratioOfShoutsBudget0();
+		
+		final List<Double> averages= this.repository.averageEntidad1GroupByCurrency();
+		final List<Double> deviations = this.repository.deviationEntidad1GroupByCurrency();
+		
+	
+        if(averages.size()==2) {
+        	averageCurrency1 = averages.get(0);
+        	averageCurrency2 = averages.get(1);
+        } else if(averages.size()<=1 && averages.size()>0) {
+        	averageCurrency1 = averages.get(0);
+            averageCurrency2 = 0.0;
+        } else {
+        	averageCurrency1 = 0.0;
+            averageCurrency2 = 0.0;
+        }
+
+        if(deviations.size()==2) {
+        	deviationCurrency1 = deviations.get(0);
+        	deviationCurrency2 = deviations.get(1);
+        } else if(deviations.size()<=1 && deviations.size()>0) {
+        	deviationCurrency1 = deviations.get(0);
+        	deviationCurrency2 = 0.0;
+        } else {
+        	deviationCurrency1 = 0.0;
+        	deviationCurrency2 = 0.0;
+        }
 
 		averageNumberOfApplicationsPerEmployer = this.repository.averageNumberOfApplicationsPerEmployer();
 		averageNumberOfApplicationsPerWorker = this.repository.averageNumberOfApplicationsPerWorker();
@@ -139,6 +177,13 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		final Double noTerminadas = (double) (duties.size() - terminadas.size());
 		final Double term = (double) terminadas.size();
+		
+		/*
+		averageDurationPeriodDuties=AdministratorDashboardShowService.ponerMinutosSobre60(averageDurationPeriodDuties);
+		deviationDurationPeriodDuties=AdministratorDashboardShowService.ponerMinutosSobre60(deviationDurationPeriodDuties) ;
+		averageWorkloadDuties=AdministratorDashboardShowService.ponerMinutosSobre60(averageWorkloadDuties);
+		deviationWorkloadDuties=AdministratorDashboardShowService.ponerMinutosSobre60(deviationWorkloadDuties);
+		*/
 
 		result = new Dashboard();
 		result.setAvegageNumberOfApplicationsPerEmployer(averageNumberOfApplicationsPerEmployer);
@@ -160,8 +205,34 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setDeviationWorkloadDuties(deviationWorkloadDuties);
 		result.setMaximumWorkloadDuties(maximumWorkloadDuties);
 		result.setMinimumWorkloadDuties(minimumWorkloadDuties);
+		
+		//shouts
+		result.setRatioEntidad1Important(ratioEntidad1Important);
+		result.setAverageCurrency1(averageCurrency1);
+		result.setAverageCurrency2(averageCurrency2);
+		result.setRatioOfShoutsBudget0(ratioOfShoutsBudget0);
+		result.setDeviationCurrency1(deviationCurrency1);
+		result.setDeviationCurrency2(deviationCurrency2);
 
 		return result;
+	}
+	
+	private static double ponerMinutosSobre60(final Double numero) {
+		double res;
+		final BigDecimal num= BigDecimal.valueOf(numero);
+		final long BDhoras=num.longValue();
+		final BigDecimal BDminutos= num.remainder(BigDecimal.ONE);
+		
+		final String parteMinutos= ""+BDminutos;
+		final String parteHoras= ""+BDhoras;
+		
+		Double minutos= new Double(parteMinutos);
+		final Double horas= new Double(parteHoras);
+		minutos=minutos*(60.0/100.0);
+		res=horas+minutos;
+		
+		
+		return res;
 	}
 	
 	private static double calculateStandardDeviation(final List<Double> lista) {

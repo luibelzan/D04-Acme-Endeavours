@@ -121,6 +121,60 @@
 		</td>
 	</tr>
 	
+	<%-- Parte de SHOUTS--%>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.ratioEntidad1Important"/>
+		</th>
+		<td>
+			<acme:print value="${ratioEntidad1Important}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.ratioOfShoutsBudget0"/>
+		</th>
+		<td>
+			<acme:print value="${ratioOfShoutsBudget0}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.averageMoneda1"/>
+		</th>
+		<td>
+			<acme:print value="${averageCurrency1}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.averageMoneda2"/>
+		</th>
+		<td>
+			<acme:print value="${averageCurrency2}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviationMoneda1"/>
+		</th>
+		<td>
+			<acme:print value="${deviationCurrency1}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviationMoneda2"/>
+		</th>
+		<td>
+			<acme:print value="${deviationCurrency2}"/>
+		</td>
+	</tr>
+	
 	
 </table>
 

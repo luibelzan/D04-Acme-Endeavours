@@ -29,4 +29,11 @@ administrator.dashboard.form.label.deviation-workload-duties = Desviación carga
 administrator.dashboard.form.label.minimum-workload-duties = Desviación mínima carga de trabajo de los deberes (en horas)
 administrator.dashboard.form.label.maximum-workload-duties = Desviación máxima carga de trabajo de los deberes (en horas)
 
+administrator.dashboard.form.label.ratioEntidad1Important = Ratio de shouts cuya entidad 1 es importante
+administrator.dashboard.form.label.ratioOfShoutsBudget0 = Ratio de shouts que tienen presupuesto 0
+administrator.dashboard.form.label.averageMoneda1 = Media de presupuestos agrupado por moneda 1 (EUR)
+administrator.dashboard.form.label.averageMoneda2 = Media de presupuestos agrupado por moneda 2 (USD)
+administrator.dashboard.form.label.deviationMoneda1 = Desviación de presupuestos agrupado por moneda 1 (EUR)
+administrator.dashboard.form.label.deviationMoneda2 = Desviación de presupuestos agrupado por moneda 2 (USD)
+
 administrator.dashboard.form.title.application-statuses = Estado de las solicitudes
