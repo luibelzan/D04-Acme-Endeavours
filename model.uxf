@@ -6,12 +6,6 @@ hasn't elapsed.
 bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2080</x><y>630</y><w>350</w><h>330</h></coordinates><panel_attributes>&lt;&lt;Form&gt;&gt;
 Dashboard
 --
-+ averageNumberOfJobsPerEmployer: double
-+ averageNumberOfApplicationsPerWorker: double
-+ avegageNumberOfApplicationsPerEmployer: double
-+ ratioOfPendingApplications: double
-+ ratioOfAcceptedApplications: double
-+ ratioOfRejectedApplications: double
 + numberPublicDuty: double
 + numberPrivateDuty: double
 + numberFinalDuty: double
@@ -24,6 +18,12 @@ Dashboard
 + deviationWorkloadDuties: double
 + minimumWorkloadDuties: double
 + maximumWorkloadDuties: double
++ ratioEntidad1Important: double
++ ratioOfShoutsBudget0: double
++ averageCurrency1: double
++ averageCurrency2: double
++ deviationCurrency1: double
++ deviationCurrency2: double
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>740</x><y>230</y><w>240</w><h>60</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
 UserRole
 --
@@ -48,13 +48,13 @@ bg=yellow</panel_attributes><additional_attributes></additional_attributes></ele
 bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1030</x><y>320</y><w>100</w><h>30</h></coordinates><panel_attributes>Authenticated
 --
 
-bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>250</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>250</y><w>80</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;40</additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>250</y><w>80</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2320</x><y>430</y><w>380</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
-Shout
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>250</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>250</y><w>80</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;40</additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>250</y><w>80</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2560</x><y>690</y><w>380</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+Entidad1
 --
-+ moment: Date {NotNull, Temporal(TIMESTAMP), Past}
-+ author: String {NotBlank, Length(5, 25)}
-+ text: String {NotBlank, Length(0, 100)}
-+ info: String {URL}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1220</x><y>430</y><w>400</w><h>220</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
++ atributo1: String {NotNull, Pattern(\\d{2}-\\w{2}\\d{2}-\\d{2}\\d{2})}
++ atributo2: Date {NotNull, Temporal(TIMESTAMP), Future}
++ atributo3: Money {NotNull, Valid}
++ atributo4: Boolean {NotNull}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1220</x><y>430</y><w>400</w><h>220</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
 Duty
 --
 + title: String {NotBlank,Length(0,80)}
@@ -105,7 +105,7 @@ BasicCommand
 + UPDATE
 + DELETE
 
-bg=white</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1820</x><y>140</y><w>700</w><h>310</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;680;290</additional_attributes></element><element><id>Relation</id><coordinates><x>1830</x><y>140</y><w>260</w><h>310</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;240;290</additional_attributes></element><element><id>Relation</id><coordinates><x>1410</x><y>140</y><w>450</w><h>310</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>430;10;10;290</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>1050</y><w>210</w><h>100</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+bg=white</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1820</x><y>140</y><w>650</w><h>310</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;630;290</additional_attributes></element><element><id>Relation</id><coordinates><x>1830</x><y>140</y><w>260</w><h>310</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;240;290</additional_attributes></element><element><id>Relation</id><coordinates><x>1410</x><y>140</y><w>450</w><h>310</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>430;10;10;290</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>1050</y><w>210</w><h>100</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
 AnnouncementStatus
 --
 + INFO
@@ -121,4 +121,13 @@ ApplicationStatus
 m1=1
 m2=*
 Manage &gt;
-</panel_attributes><additional_attributes>10;10;270;80;410;80</additional_attributes></element></diagram>
+</panel_attributes><additional_attributes>10;10;270;80;410;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2270</x><y>430</y><w>380</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+Shout
+--
++ moment: Date {NotNull, Temporal(TIMESTAMP), Past}
++ author: String {NotBlank, Length(5, 25)}
++ text: String {NotBlank, Length(0, 100)}
++ info: String {URL}</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2450</x><y>540</y><w>300</w><h>170</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1
+have &gt;</panel_attributes><additional_attributes>10;10;280;150</additional_attributes></element></diagram>
