@@ -35,7 +35,6 @@ protected static final long	serialVersionUID	= 1L;
     @NotNull
 	protected Money atributo3;
 	
-	@NotNull
 	protected Boolean atributo4;
 	
 	@Valid

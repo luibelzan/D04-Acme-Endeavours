@@ -77,6 +77,37 @@ public class AdministratorShowDashboardTest extends AcmeEndeavoursTest{
 		locatorMaximumWorkloadTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[12]/td");
 		final WebElement maximumWorkloadTasks = this.driver.findElement(locatorMaximumWorkloadTasks);
 		Assertions.assertEquals("11.25", maximumWorkloadTasks.getText());
+		
+		final By locatorRatioEntidad1Important;
+		locatorRatioEntidad1Important = By.xpath("/html/body/div[2]/div/table/tbody/tr[13]/td");
+		final WebElement ratioEntidad1Important = this.driver.findElement(locatorRatioEntidad1Important);
+		Assertions.assertEquals("0.57", ratioEntidad1Important.getText());
+		
+		final By locatorRatioOfShoutsBudget0;
+		locatorRatioOfShoutsBudget0 = By.xpath("/html/body/div[2]/div/table/tbody/tr[14]/td");
+		final WebElement ratioOfShoutsBudget0 = this.driver.findElement(locatorRatioOfShoutsBudget0);
+		Assertions.assertEquals("0.00", ratioOfShoutsBudget0.getText());
+		
+		final By locatorAverageCurrency1;
+		locatorAverageCurrency1 = By.xpath("/html/body/div[2]/div/table/tbody/tr[15]/td");
+		final WebElement averageCurrency1 = this.driver.findElement(locatorAverageCurrency1);
+		Assertions.assertEquals("403.25", averageCurrency1.getText());
+		
+		final By locatorAverageCurrency2;
+		locatorAverageCurrency2 = By.xpath("/html/body/div[2]/div/table/tbody/tr[16]/td");
+		final WebElement averageCurrency2 = this.driver.findElement(locatorAverageCurrency2);
+		Assertions.assertEquals("15.00", averageCurrency2.getText());
+		
+		final By locatorDeviationCurrency1;
+		locatorDeviationCurrency1 = By.xpath("/html/body/div[2]/div/table/tbody/tr[17]/td");
+		final WebElement deviationCurrency1 = this.driver.findElement(locatorDeviationCurrency1);
+		Assertions.assertEquals("390.43", deviationCurrency1.getText());
+		
+		final By locatorDeviationCurrency2;
+		locatorDeviationCurrency2 = By.xpath("/html/body/div[2]/div/table/tbody/tr[18]/td");
+		final WebElement deviationCurrency2 = this.driver.findElement(locatorDeviationCurrency2);
+		Assertions.assertEquals("10.80", deviationCurrency2.getText());
+		
 
 	}
 	/*
