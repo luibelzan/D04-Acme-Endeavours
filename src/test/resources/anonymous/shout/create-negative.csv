@@ -1,8 +1,8 @@
-recordIndex,author,text,info
-0,Sex,Good morning!,http://www.sample-app.com
-1,Good morning!,sex,http://www.sample-app.com
-2,Hola a a million dollars,Hello people!,http://www.sample-app.com
-3,,Good morning!,
+recordIndex,author,text,info,atributo1,atributo2,atributo3,atributo4
+0,Sex,Good morning!,http://www.sample-app.com,10-ww10-1221,2021/12/12 10:00,10 EUR,true
+1,Good morning!,sex,http://www.sample-app.com,13-aa05-1221,2021/02/20 13:00,1000 USD,false
+2,Hola a a million dollars,Hello people!,http://www.sample-app.com,,2022/02/20 16:00,1 EUR,true
+3,,Good morning!,,13-oo12-1221,2022/04/20 10:00,-5 EUR,false
 4,,,
 5,,Good morning!,http://www.sample-app.com
 6,Sex,Sex a a a a a a a a a,http://www.sample-app.com

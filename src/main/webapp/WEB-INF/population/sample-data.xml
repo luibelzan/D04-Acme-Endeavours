@@ -35,7 +35,7 @@
 	<bean id="entidad103" class="acme.entities.entidades1.Entidad1">
 		<property name="atributo1" value="11-aa02-1221"></property>
 		<property name="atributo2" value="2022/01/27 19:39"></property>
-		<property name="atributo3" value="1000 EUR"></property>
+		<property name="atributo3" value="900 EUR"></property>
 		<property name="atributo4" value="true"></property>
 	</bean>
 	<bean id="entidad104" class="acme.entities.entidades1.Entidad1">

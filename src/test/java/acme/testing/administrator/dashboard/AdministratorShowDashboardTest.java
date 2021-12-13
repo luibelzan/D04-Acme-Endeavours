@@ -91,7 +91,7 @@ public class AdministratorShowDashboardTest extends AcmeEndeavoursTest{
 		final By locatorAverageCurrency1;
 		locatorAverageCurrency1 = By.xpath("/html/body/div[2]/div/table/tbody/tr[15]/td");
 		final WebElement averageCurrency1 = this.driver.findElement(locatorAverageCurrency1);
-		Assertions.assertEquals("403.25", averageCurrency1.getText());
+		Assertions.assertEquals("378.25", averageCurrency1.getText());
 		
 		final By locatorAverageCurrency2;
 		locatorAverageCurrency2 = By.xpath("/html/body/div[2]/div/table/tbody/tr[16]/td");
@@ -101,7 +101,7 @@ public class AdministratorShowDashboardTest extends AcmeEndeavoursTest{
 		final By locatorDeviationCurrency1;
 		locatorDeviationCurrency1 = By.xpath("/html/body/div[2]/div/table/tbody/tr[17]/td");
 		final WebElement deviationCurrency1 = this.driver.findElement(locatorDeviationCurrency1);
-		Assertions.assertEquals("390.43", deviationCurrency1.getText());
+		Assertions.assertEquals("352.80", deviationCurrency1.getText());
 		
 		final By locatorDeviationCurrency2;
 		locatorDeviationCurrency2 = By.xpath("/html/body/div[2]/div/table/tbody/tr[18]/td");

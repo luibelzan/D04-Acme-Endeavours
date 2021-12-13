@@ -1,8 +1,8 @@
-recordIndex,moment,author,text,info
-0,2021/12/08 12:30,Leslie Design,I have to go to the dry cleaner!,http://cleanApp.com
-1,2021/12/08 12:30,Marta Design,I have to study for the exams,https://www.informatica.us.es/
-2,2021/12/08 15:30,Foo Bar,Just turning 50!,
-3,2021/12/08 15:39,John Doe,I'm happy!, 
-4,2021/12/08 15:55,Jane Doe,I have to clean the car,http://www.lavaderoSevilla.com
+recordIndex,moment,author,text,info,atributo1,atributo2,atributo3,atributo4
+0,2021/12/11 12:30,Leslie Design,I have to go to the dry cleaner!,http://cleanApp.com,11-aa03-1221,2022/01/20 19:39,USD 5.00,true
+1,2021/12/11 12:30,Marta Design,I have to study for the exams,https://www.informatica.us.es/,11-aa04-1221,2022/03/24 12:30,EUR 13.00,false
+2,2021/12/11 15:30,Foo Bar,Just turning 50!,,11-aa02-1221,2022/01/27 19:39,EUR 900.00,true
+3,2021/12/11 15:39,John Doe,I'm happy!,,11-aa00-1221,2022/01/14 19:39,EUR 500.00,true
+4,2021/12/11 15:55,Jane Doe,I have to clean the car,http://www.lavaderoSevilla.com,11-aa01-1221,2022/02/01 19:39,USD 30.00,false
 
 
